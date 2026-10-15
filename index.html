@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untuk Kamu ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; min-height:100vh; color:#54252d;
+      font-family:Poppins,sans-serif;
+      background:
+        radial-gradient(circle at 20% 20%,rgba(255,255,255,.7),transparent 28%),
+        linear-gradient(135deg,#ffdce6 0%,#f7b6ca 45%,#ffe6d8 100%);
+      overflow-x:hidden;
+    }
+    .music{
+      position:fixed;z-index:20;top:18px;left:18px;border:0;border-radius:999px;
+      padding:12px 20px;background:#c94d68;color:white;font-weight:600;cursor:pointer;
+      box-shadow:0 8px 25px rgba(100,30,50,.2)
+    }
+    .hero{min-height:100vh;display:grid;place-items:center;padding:70px 20px 45px;position:relative}
+    .card{
+      width:min(900px,100%);text-align:center;padding:55px 28px 45px;
+      background:rgba(255,248,250,.78);backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,.8);border-radius:32px;
+      box-shadow:0 25px 70px rgba(109,38,59,.18)
+    }
+    .eyebrow{font-size:15px;letter-spacing:2px;text-transform:uppercase;opacity:.7}
+    h1{font-family:"Baloo 2",cursive;font-size:clamp(48px,8vw,90px);line-height:.95;margin:14px 0;color:#54252d}
+    h1 span{color:#d94363}
+    .subtitle{font-size:clamp(16px,2.2vw,21px);line-height:1.8;max-width:650px;margin:0 auto 35px}
+    .buttons{display:flex;justify-content:center;align-items:center;gap:18px;min-height:72px}
+    button.choice{
+      font:700 20px "Baloo 2",cursive;border-radius:999px;padding:14px 36px;cursor:pointer;
+      transition:.25s ease
+    }
+    #yes{border:0;background:#e84868;color:white;box-shadow:0 12px 30px rgba(232,72,104,.3)}
+    #yes:hover{transform:translateY(-4px) scale(1.03)}
+    #no{background:transparent;border:2px solid #d85b73;color:#71323c}
+    .hint{font-size:13px;opacity:.6;margin-top:20px}
+    .section{padding:30px 20px 80px}
+    .features{width:min(1050px,100%);margin:auto;background:rgba(255,248,250,.75);border-radius:30px;padding:38px 25px;box-shadow:0 15px 45px rgba(109,38,59,.12)}
+    .features h2{font-family:"Baloo 2";font-size:34px;text-align:center;margin:0 0 25px}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .feature{text-align:center;padding:15px}
+    .icon{width:60px;height:60px;margin:auto;border-radius:50%;display:grid;place-items:center;background:#ffd4df;font-size:28px}
+    .feature h3{font-family:"Baloo 2";font-size:21px;margin:10px 0 4px}
+    .feature p{font-size:13px;line-height:1.6;margin:0;opacity:.8}
+    .heart{position:fixed;bottom:-30px;font-size:24px;animation:float 7s linear forwards;pointer-events:none;z-index:10}
+    @keyframes float{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+    .modal{position:fixed;inset:0;background:rgba(66,20,30,.55);display:none;place-items:center;padding:20px;z-index:50}
+    .modal.show{display:grid}
+    .modal-box{max-width:520px;text-align:center;background:#fff8fa;border-radius:30px;padding:45px 30px;box-shadow:0 25px 80px rgba(0,0,0,.25);animation:pop .45s ease}
+    .modal-box .big{font-size:70px}
+    .modal-box h2{font-family:"Baloo 2";font-size:40px;margin:8px 0;color:#d94363}
+    .modal-box p{line-height:1.8}
+    .close{margin-top:12px;border:0;border-radius:999px;padding:11px 25px;background:#e84868;color:white;cursor:pointer}
+    @keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+    @media(max-width:750px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:450px){.grid{grid-template-columns:1fr 1fr}.card{padding:45px 18px 35px}.buttons{gap:10px}.choice{padding:12px 25px!important}}
+  </style>
+</head>
+<body>
+  <button class="music" id="musicBtn">▶ ♫ Putar Musik</button>
+
+  <main>
+    <section class="hero">
+      <div class="card">
+        <div class="eyebrow">Ada sesuatu yang ingin kusampaikan…</div>
+        <h1>Apakah kamu<br><span>mau jadi pacarku?</span> ❤️</h1>
+        <p class="subtitle">
+          Aku sudah lama menyimpan rasa ini. Kalau kamu juga merasa sama,
+          maukah kamu menjadi seseorang yang spesial untukku?
+        </p>
+        <div class="buttons">
+          <button class="choice" id="yes">Mau ❤️</button>
+          <button class="choice" id="no">Tidak 😢</button>
+        </div>
+        <div class="hint">Pilih dengan jujur ya. Aku siap menerima jawabanmu. 🤍</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="features">
+        <h2>Kalau kamu klik “Mau” … 💗</h2>
+        <div class="grid">
+          <div class="feature"><div class="icon">❤️</div><h3>Kita lebih dekat</h3><p>Lebih banyak cerita, lebih banyak waktu bersama.</p></div>
+          <div class="feature"><div class="icon">💬</div><h3>Saling cerita</h3><p>Tentang hal-hal kecil maupun besar yang kita alami.</p></div>
+          <div class="feature"><div class="icon">⭐</div><h3>Saling mendukung</h3><p>Dalam hal apa pun, selalu ada untuk satu sama lain.</p></div>
+          <div class="feature"><div class="icon">∞</div><h3>Jalan bersama</h3><p>Menuju banyak hal baik yang mungkin menunggu di depan.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <div class="big">🥹❤️</div>
+      <h2>Yay! Kamu mau!</h2>
+      <p>
+        Terima kasih sudah menjawab. Mulai hari ini, semoga kita bisa
+        saling mengenal lebih dekat, saling menjaga, dan membuat banyak
+        cerita indah bersama. ❤️
+      </p>
+      <button class="close" id="close">Aku senang banget! 🥰</button>
+    </div>
+  </div>
+
+  <script>
+    const yes = document.getElementById("yes");
+    const no = document.getElementById("no");
+    const modal = document.getElementById("modal");
+    const close = document.getElementById("close");
+    const musicBtn = document.getElementById("musicBtn");
+
+    yes.addEventListener("click", () => {
+      modal.classList.add("show");
+      burstHearts();
+    });
+
+    close.addEventListener("click", () => modal.classList.remove("show"));
+    modal.addEventListener("click", e => { if(e.target === modal) modal.classList.remove("show"); });
+
+    function moveNo(){
+      const x = Math.random() * Math.min(220, window.innerWidth * .45) - 110;
+      const y = Math.random() * 180 - 90;
+      no.style.transform = `translate(${x}px,${y}px)`;
+    }
+    no.addEventListener("mouseenter", moveNo);
+    no.addEventListener("touchstart", e => { e.preventDefault(); moveNo(); }, {passive:false});
+
+    function heart(){
+      const el=document.createElement("div");
+      el.className="heart";
+      el.textContent=["❤️","💗","💕","💖","🌸"][Math.floor(Math.random()*5)];
+      el.style.left=Math.random()*100+"vw";
+      el.style.fontSize=(18+Math.random()*22)+"px";
+      el.style.animationDuration=(5+Math.random()*4)+"s";
+      document.body.appendChild(el);
+      setTimeout(()=>el.remove(),9000);
+    }
+    setInterval(heart,700);
+
+    function burstHearts(){ for(let i=0;i<25;i++) setTimeout(heart,i*70); }
+
+    // Musik opsional: browser tidak mengizinkan autoplay.
+    // Untuk menambahkan lagu, letakkan file music.mp3 di folder yang sama.
+    const audio = new Audio("music.mp3");
+    audio.loop = true;
+    musicBtn.addEventListener("click", async () => {
+      try {
+        if(audio.paused){ await audio.play(); musicBtn.textContent="⏸ ♫ Jeda Musik"; }
+        else { audio.pause(); musicBtn.textContent="▶ ♫ Putar Musik"; }
+      } catch(e) {
+        alert("Tambahkan file bernama music.mp3 ke folder website terlebih dahulu.");
+      }
+    });
+  </script>
+</body>
+</html>
